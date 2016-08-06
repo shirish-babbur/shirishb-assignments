@@ -50,7 +50,6 @@ class restaurant
 }
 public class restaurant_finder {
 
-
 	public void finder_logic_single(String[] inputs,LinkedList<restaurant>restaurant_list)
 	{
 		int j=0;
@@ -61,16 +60,21 @@ public class restaurant_finder {
 		for(int i=0;i<restaurant_list.size();i++)
 		{
 			restaurantObject=(restaurant)restaurant_list.get(i);
-			item_name=restaurantObject.item_label[0];
-			item_name_user=inputs[0];
-			item_name=item_name.replaceAll("\\s+","");
-			item_name_user=item_name_user.replaceAll("\\s+","");
-			if(item_name.equals(item_name_user))
+			for(int k=0;k<restaurantObject.item_label.length;k++)
 			{
-				price[j++]=new Integer(restaurantObject.restaurant_id).doubleValue();
-				price[j++]=restaurantObject.item_price;
+				if(restaurantObject.item_label[k]!=null)
+				{
+					item_name=restaurantObject.item_label[k];
+					item_name_user=inputs[0];
+					item_name=item_name.replaceAll("\\s+","");
+					item_name_user=item_name_user.replaceAll("\\s+","");
+					if(item_name.equals(item_name_user))
+					{
+						price[j++]=new Integer(restaurantObject.restaurant_id).doubleValue();
+						price[j++]=restaurantObject.item_price;
+					}
+				}
 			}
-			//System.out.println(rest_id+","+sum_of_price);
 		}
 		temp=price[1];
 		rest_id=price[0];
@@ -90,6 +94,101 @@ public class restaurant_finder {
 	}
 	public void finder_logic_multiple(String[] inputs,LinkedList<restaurant>restaurant_list){
 		
+		double []result = new double[20];
+		double price=0;
+		double rest_id=0,next_rest_id=0;
+		int m=0;
+		 String item_name="",item_name_user="";
+		 
+			 for(int i=0;i<restaurant_list.size();i++)
+			 {
+				 restaurant restaurantObject2=null;
+				 restaurant restaurantObject=(restaurant)restaurant_list.get(i);
+				 if(i<=(restaurant_list.size()-2))
+				 {
+					restaurantObject2=(restaurant)restaurant_list.get(i+1);
+					next_rest_id=new Integer(restaurantObject2.restaurant_id).doubleValue();
+				 }
+				 rest_id=new Integer(restaurantObject.restaurant_id).doubleValue();
+				 
+				 for(int j=0;j<inputs.length;j++)
+				 {
+					 
+					 item_name_user=inputs[j];
+					 for(int k=0;k<restaurantObject.item_label.length;k++)
+					 {
+						 
+						 item_name=restaurantObject.item_label[k];
+						 if(item_name!=null)
+						 {
+							item_name=item_name.replaceAll("\\s+","");
+							item_name_user=item_name_user.replaceAll("\\s+","");
+							if(item_name.equals(item_name_user))
+							{
+									rest_id=new Integer(restaurantObject.restaurant_id).doubleValue();
+									if(checkrestaurantID(result, rest_id))
+									{
+										for(int n=0;n<result.length;n=n+2)
+										{
+											if(result[n]==rest_id)
+											{
+												result[n+1]+=restaurantObject.item_price;
+											}
+										}
+									}
+									else
+									{
+										result[m++]=restaurantObject.restaurant_id;
+										result[m++]=restaurantObject.item_price;
+									}
+							}							
+						 }
+					 }
+				 }
+			 }
+			 if(noOfItems(result)>inputs.length)
+			 {
+				System.out.println("No restaurant found!"); 
+			 }
+			 else
+			 {
+			 	price=result[1];
+				rest_id=result[0];
+				for(int i=1;i<result.length;i=i+2)
+				{
+					System.out.println(result[i]);
+					if(price>result[i] && result[i]!=0)
+					{
+						
+						rest_id=result[i-1];
+						price=result[i];
+					}
+				}
+				System.out.println(rest_id+","+price);
+			 }
+			 
+	}
+	public static int noOfItems(double []result)
+	{
+		for(int i=0;i<result.length;i++)
+		{
+			if(result[i]==0)
+			{
+				return i;
+			}
+		}
+		return 0;
+	}
+	public static boolean checkrestaurantID(double []result,double old_rest_id)
+	{
+		for(int i=0;i<result.length;i=i+2)
+		{
+			if(result[i]==old_rest_id)
+			{
+				return true;
+			}
+		}
+		return false;
 		
 	}
 
@@ -118,7 +217,6 @@ public class restaurant_finder {
 		{
 			restaurant_finder.finder_logic_multiple(inputs,restaurant_list);
 		}
-		//System.out.println(input_from_user);
 
 	}
 
