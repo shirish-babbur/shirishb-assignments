@@ -1,0 +1,37 @@
+Users
+{
+	id:1
+	user_name:"abc",
+	password:"zbxc123"
+	name:"anc asd",
+	date_of_birth:12-12-1990,
+	gender:"m or f"
+}
+
+Posts
+{
+	author_id:1
+	title:"post_title",
+	date_of_post:"11-2-2016 10:30",
+	content:{images,etc},
+	tags:{}
+	comments:[
+			{	
+				time_of_comment:"12-3-2016 6:10",
+				commentor:"asf",
+				comment:"hey1"
+			},
+			{	
+				time_of_comment:"12-4-2016 8:10",
+				commentor:"afg",
+				comment:"hey2"
+			}
+		 ]
+}
+Types_of_users
+{
+	user_id:1
+	editor:0
+	admin:0
+	super_admin:1
+}
