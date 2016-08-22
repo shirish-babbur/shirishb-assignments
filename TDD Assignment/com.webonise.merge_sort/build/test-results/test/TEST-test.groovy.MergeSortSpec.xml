@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.groovy.MergeSortSpec" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-08-22T07:09:18" hostname="webonise-desktop" time="0.124">
+  <properties/>
+  <testcase name="MergeSort method Sorts input Array" classname="test.groovy.MergeSortSpec" time="0.122"/>
+  <testcase name="Merge method merges in ascending order" classname="test.groovy.MergeSortSpec" time="0.001"/>
+  <testcase name="MergeSort do not sorts for empty array" classname="test.groovy.MergeSortSpec" time="0.001"/>
+  <system-out><![CDATA[in Merge()
+in Merge()
+in Merge()
+in Merge()
+in Merge()
+in Merge()
+in Merge()
+in Merge()
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
