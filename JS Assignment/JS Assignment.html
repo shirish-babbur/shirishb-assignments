@@ -1,7 +1,58 @@
 <html>
 <head>
+	<script>
+		var storageKey="Storage";
+var user_name,age;
+function store_items(){
+	input();
+	if (this.getItem(storageKey)) {
+		var temp=JSON.parse(this.getItem(storageKey));
+		var obj=new Object();
+		obj.user_name=user_name;
+		obj.age=age;
+		temp.push(obj);
+		this.setItem(storageKey,JSON.stringify(temp));
+	}
+	else
+	{
+		var data=[];
+		var obj=new Object();
+		obj.user_name=user_name;
+		obj.age=age;
+		data.push(obj);
+		this.setItem(storageKey,JSON.stringify(data));
+	}
+}
+function length(){
+	var temp=JSON.parse(this.getItem(storageKey));
+	alert(temp.length);
+}
+function remove_items(){
+	var temp=JSON.parse(this.getItem(storageKey));
+	temp.pop();
+	this.setItem(storageKey,JSON.stringify(temp));
+}
+function input(){
+	user_name=document.getElementById("user_name").value;
+	age=document.getElementById("age").value;
+}
+	</script>
 </head>
 <body>
-<p>HEllo<p>
+<label>Your Name:</label>
+<INPUT TYPE=TEXT id="user_name"></INPUT>
+<br>
+<label>Your Age:</label>
+<INPUT TYPE=TEXT id="age"></INPUT>
+<br>
+<INPUT type="button" value="SessionStorage" onclick="store_items.call(sessionStorage)"></INPUT>
+<INPUT type="button" value="LocalStorage" onclick="store_items.call(localStorage)"></INPUT>
+<INPUT type="button" value="SessionStorage key length" onclick="length.call(sessionStorage)"></INPUT>
+<INPUT type="button" value="localStorage key length" onclick="length.call(localStorage)"></INPUT>
+<br>
+<INPUT type="button" value="remove from sessionStorage" onclick="remove_items.call(sessionStorage)"></INPUT>
+<INPUT type="button" value="remove from localStorage" onclick="remove_items.call(localStorage)"></INPUT>
+<br>
+
 </body>
 </html>
