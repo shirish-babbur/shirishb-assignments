@@ -1,37 +1,40 @@
 Users
 {
-	id:1
+	_id:1123213
 	user_name:"abc",
 	password:"zbxc123"
 	name:"anc asd",
-	date_of_birth:12-12-1990,
+	date_of_birth:"12-12-1990",
 	gender:"m or f"
+	role:1/2/3/4
 }
 
 Posts
 {
-	author_id:1
+	user_id:1
 	title:"post_title",
-	date_of_post:"11-2-2016 10:30",
-	content:{images,etc},
-	tags:{}
+	posted_at:"11-2-2016 10:30",
+	content:"Content Text",
+	tags:["#tw","#fb"]
 	comments:[
 			{	
-				time_of_comment:"12-3-2016 6:10",
-				commentor:"asf",
+				created_at:"12-3-2016 6:10",
+				user_id:1,
 				comment:"hey1"
+				replies:[{user_id,comment:"hi"}]
 			},
 			{	
-				time_of_comment:"12-4-2016 8:10",
-				commentor:"afg",
+				created_at:"12-4-2016 8:10",
+				user_id:2,
 				comment:"hey2"
+				replies:[{user_id,comment:"hi"}]
+			}
+			{	
+				created_at:"12-4-2016 9:10",
+				user_id:3,
+				comment:"hey2"
+				replies:[{user_id:1,comment:"hi"}]
 			}
 		 ]
 }
-Types_of_users
-{
-	user_id:1
-	editor:0
-	admin:0
-	super_admin:1
-}
+
