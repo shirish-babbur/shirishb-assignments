@@ -1,0 +1,98 @@
+.container{
+	width: 1170px;
+	margin: 0 auto
+}
+.clear{
+	clear: both;
+}
+ul li{
+	float: left;
+	list-style-type: none;
+}
+.header{
+	background-color:grey;
+	padding-left: 200px;
+	padding-right: 300px;
+	padding-top: 7.5px;
+	padding-bottom: 7.5px;
+}
+.logo{
+	height: 35px;
+	width: 140px;
+	float: left;
+	background-color:#ff8000;
+	text-align: center;
+	line-height: 35px;
+}
+.header ul{
+	list-style-type: none;
+	float: right;
+	margin:0px;
+}
+.header ul li{
+	font-size: 18px;
+	float: left;
+	margin-left: 35px;
+	line-height: 35px;
+}
+.header ul li a{
+	color:#aaaaaa;
+	text-decoration: none;
+}
+.banner {
+	height: 485px;
+	background-color:#71c4ea;
+}
+.content{
+	padding-bottom: 68px;
+	text-align: center;
+}
+.circles{
+	display: inline-block;
+}
+.content h1{
+	text-align: center;
+	color:#444444;
+	padding-top: 64px;
+	padding-bottom: 70px;
+}
+.content ul li{
+	margin-left: 37.5px;
+	margin-right: 37.5px;
+	float: left;
+}
+.circle{
+	height: 140px;
+	width: 140px;
+	border-radius: 140px;
+	background-color:#efefef;
+	margin:auto;
+}
+.text{
+	font-size: 18px;
+	color: #888888;
+	text-align: center;
+	width: 140px;
+	padding: 10px 10px 10px 10px;
+}
+.footer{
+	background-color:#ececec;
+	text-align: center;
+}
+.footer ul{
+	display: inline-block;
+}
+.footer ul li{
+	line-height: 16px;
+	text-align: center;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.footer ul li a{
+	text-decoration: none;
+	font-size: 16px;
+	color: #ff8000;
+}
+.footer ul li a:hover{
+	color: #444444;
+}
