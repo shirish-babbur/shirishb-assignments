@@ -1,6 +1,6 @@
 .container{
 	width: 1170px;
-	margin: 0 auto
+	margin: 0 auto;
 }
 .clear{
 	clear: both;
@@ -9,30 +9,31 @@ ul li{
 	float: left;
 	list-style-type: none;
 }
-.header{
+.header_container{
 	background-color:grey;
-	padding-left: 200px;
-	padding-right: 300px;
-	padding-top: 7.5px;
+	text-align: center;
 	padding-bottom: 7.5px;
+	padding-top: 7.5px;
+}
+.header{
+		display: inline-block;
 }
 .logo{
+	margin-right: 17.5px;
+    margin-left: 17.5px;
+	float: left;
 	height: 35px;
 	width: 140px;
-	float: left;
 	background-color:#ff8000;
-	text-align: center;
 	line-height: 35px;
 }
 .header ul{
-	list-style-type: none;
 	float: right;
-	margin:0px;
 }
 .header ul li{
 	font-size: 18px;
-	float: left;
-	margin-left: 35px;
+	margin-right: 17.5px;
+	margin-left: 17.5px;
 	line-height: 35px;
 }
 .header ul li a{
@@ -44,22 +45,21 @@ ul li{
 	background-color:#71c4ea;
 }
 .content{
-	padding-bottom: 68px;
 	text-align: center;
 }
-.circles{
+.content_heading{
+	font-size: 34px;
+	margin-top: 62px;
+	line-height: 38px;
+	margin-bottom: 68px;
+	font-weight: bold;
+}
+.circle_container{
 	display: inline-block;
-}
-.content h1{
-	text-align: center;
-	color:#444444;
-	padding-top: 64px;
-	padding-bottom: 70px;
 }
 .content ul li{
 	margin-left: 37.5px;
 	margin-right: 37.5px;
-	float: left;
 }
 .circle{
 	height: 140px;
@@ -69,30 +69,34 @@ ul li{
 	margin:auto;
 }
 .text{
+	margin-top: 10px;
 	font-size: 18px;
 	color: #888888;
-	text-align: center;
-	width: 140px;
-	padding: 10px 10px 10px 10px;
+	width: 170px;
 }
 .footer{
 	background-color:#ececec;
 	text-align: center;
+	margin-top: 100px;
+	padding: 10px 10px 10px 10px;
 }
 .footer ul{
 	display: inline-block;
 }
 .footer ul li{
-	line-height: 16px;
-	text-align: center;
 	margin-left: 8px;
 	margin-right: 8px;
 }
 .footer ul li a{
 	text-decoration: none;
+	font-weight: bold;
 	font-size: 16px;
 	color: #ff8000;
 }
+.home_btn:active{
+	color: #444444;
+}
 .footer ul li a:hover{
+
 	color: #444444;
 }
