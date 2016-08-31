@@ -1,0 +1,29 @@
+# Logfile created on 2016-08-31 15:59:04 +0530 by logger.rb/54362
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-31 15:59:04 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-31 16:01:51 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [0f1228af] Running /usr/bin/env mkdir -p /tmp as app@127.0.0.1
+ DEBUG [0f1228af] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-31 16:02:40 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f977bf2e] Running /usr/bin/env mkdir -p /tmp as app@127.0.0.1
+ DEBUG [f977bf2e] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-31 16:08:25 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [ab2a3ac3] Running /usr/bin/env mkdir -p /tmp as app@127.0.0.1
+ DEBUG [ab2a3ac3] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-31 16:08:43 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [27003cd1] Running /usr/bin/env mkdir -p /tmp as app@127.0.0.1
+ DEBUG [27003cd1] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-31 17:38:08 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [3b5e1ac6] Running /usr/bin/env mkdir -p /tmp as app@127.0.0.1
+ DEBUG [3b5e1ac6] Command: /usr/bin/env mkdir -p /tmp
