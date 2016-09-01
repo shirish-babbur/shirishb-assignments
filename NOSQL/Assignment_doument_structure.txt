@@ -1,0 +1,41 @@
+Users
+{
+	_id:1123213
+	user_name:"abc",
+	password:"zbxc123"
+	name:"anc asd",
+	date_of_birth:"12-12-1990",
+	gender:"m or f"
+	role:"editor"
+	post_id:[1,2,3]
+}
+
+Posts
+{
+	user_id:1
+	title:"post_title",
+	posted_at:"11-2-2016 10:30",
+	content:"Content Text",
+	tags:["#tw","#fb"]
+	comments:[
+			{	
+				created_at:"12-3-2016 6:10",
+				user_id:1,
+				comment:"hey1"
+				replies:[{user_id,comment:"hi"}]
+			},
+			{	
+				created_at:"12-4-2016 8:10",
+				user_id:2,
+				comment:"hey2"
+				replies:[{user_id,comment:"hi"}]
+			}
+			{	
+				created_at:"12-4-2016 9:10",
+				user_id:3,
+				comment:"hey2"
+				replies:[{user_id:1,comment:"hi"}]
+			}
+		 ]
+}
+

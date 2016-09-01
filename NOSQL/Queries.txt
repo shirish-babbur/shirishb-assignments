@@ -1,0 +1,22 @@
+
+*adding comment on post:
+db.Posts.update({_id:ObjectId("57c6e082dfee7649051e4af2")},{$push:{"comments":{id:2,created_at:"13-2-2016",comment:"this is 3rd comment",replies:[]}}});
+
+*updating my post:
+db.Posts.update({_id:ObjectId("57b3f69b62904fa5054125cb")},{$set:{content:"content changed"}});
+
+*seeing latest post:
+db.Posts.find({user_id:ObjectId("57beb93045902757231e658e")}).sort({"date_of_post":-1});
+
+
+*remove perticular comment:
+db.Posts.update({_id:ObjectId("57c6e082dfee7649051e4af2"),"comments.id":3},{"$pull":{comments:{id:3}}},false,false);
+
+*no of comments on perticular post:
+db.Posts.aggregate([{$match:{_id:ObjectId("57c0451687db9dcc9c090404")}},{$project:{count:{$size:"$comments"}}}]);
+
+
+*posts with no of comments more than 2:
+db.Posts.find({'comments.2': {$exists: true}});
+db.Posts.find( { $where: "this.comments.length > 2" } );
+db.Posts.aggregate([{$project: {_id:1,user_id:1,title:1,content:1,tags:1,comments:1,size_of_comments: {$size: "$comments"}}},{$match: {"size_of_comments": {$gt: 2}}}]).pretty();
