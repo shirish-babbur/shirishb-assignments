@@ -6,7 +6,7 @@ Users
 	name:"anc asd",
 	date_of_birth:"12-12-1990",
 	gender:"m or f"
-	role:1/2/3/4
+	role:"editor"
 	post_id:[1,2,3]
 }
 
