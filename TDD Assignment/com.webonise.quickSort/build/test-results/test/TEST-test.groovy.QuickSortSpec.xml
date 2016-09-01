@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.groovy.QuickSortSpec" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-08-22T08:23:49" hostname="webonise-desktop" time="0.125">
+  <properties/>
+  <testcase name="QuickSort method Sorts input Array" classname="test.groovy.QuickSortSpec" time="0.124"/>
+  <testcase name="QuickSort do not sorts for empty array" classname="test.groovy.QuickSortSpec" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
