@@ -11,8 +11,8 @@ ul {
 }
 .logo {
 	display: inline-block;
-	margin-top: 5px;
-	margin-bottom: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .nav-links ul li{
 	line-height: 34px;
