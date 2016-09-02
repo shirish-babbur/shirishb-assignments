@@ -1,0 +1,2 @@
+sudo gedit /etc/logrotate.d/linuxcareer
+sudo logrotate -f /etc/logrotate.conf

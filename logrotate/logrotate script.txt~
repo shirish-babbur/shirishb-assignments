@@ -1,0 +1,9 @@
+/home/webonise/logstatus {
+    missingok
+    notifempty
+    compress
+    size 50M
+    weekly
+    create 700 webonise
+}
+
