@@ -3,10 +3,21 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
- server '127.0.0.1:7777/Assignment.html', user: 'app', roles: %w{app web}
+ #server '127.0.0.1:7777/Assignment.html'
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
+role :app, %w{webonise@127.0.0.1:7777/Assignment.html}
+role :web, %w{webonise@127.0.0.1:7777/Assignment.html}
+role :db,  %w{webonise@127.0.0.1:7777/Assignment.html}
+server "IP_ADDRESS", user: 'webonise', roles: %w{app web db}
+set :deploy_to, "/home/webonise/JS"
+set :ssh_options, {
+    forward_agent: false,
+    auth_methods: %w(password),
+    password: 'webonise123#',
+    user: 'webonise',
+}
 
 
 # role-based syntax
@@ -59,3 +70,6 @@
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+set :ssh_options, {
+    port: 7777
+    }

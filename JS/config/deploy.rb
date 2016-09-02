@@ -3,13 +3,16 @@ lock '3.6.1'
 
 set :application, 'JS'
 set :repo_url, 'https://github.com/shirishb-webonise/shirishb-assignments.git'
-
+set :branch,'JS'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 #set :deploy_to, '/var/www/my_app_name'
 set :deploy_to, "/home/webonise/JS/#{fetch(:application)}"
+set :deploy_via, :copy
+set :port , 22
+
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -37,19 +40,19 @@ set :deploy_to, "/home/webonise/JS/#{fetch(:application)}"
 # set :keep_releases, 5
 
 
-namespace :deploy do
-desc 'Build Docker images'
-  task :build do
-    on roles(:app) do
-      execute "cd #{release_path} && docker build -t docker_static_image ."
-    end
-  end
-  desc 'Restart application'
-  task :restart do
-    on roles(:app) do
-        execute "docker run -d -p 7777:80 docker_static_image"
-    end
-  end
-   after :publishing, 'deploy:build'
-  after :publishing, 'deploy:restart'
-end
+# namespace :deploy do
+# desc 'Build Docker images'
+#   task :build do
+#     on roles(:app) do
+#       execute "cd #{release_path} && docker build -t docker_static_image ."
+#     end
+#   end
+#   desc 'Restart application'
+#   task :restart do
+#     on roles(:app) do
+#         execute "docker run -d -p 7777:80 docker_static_image"
+#     end
+#   end
+#    after :publishing, 'deploy:build'
+#   after :publishing, 'deploy:restart'
+# end
